@@ -15,7 +15,7 @@
  */
 
 
-class Parent {
+class Parent extends Object{
 	 public int member1;
 	 public int member2;
 	 public void method1() {
