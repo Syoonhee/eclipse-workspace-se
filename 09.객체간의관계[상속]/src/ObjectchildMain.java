@@ -17,7 +17,7 @@ public class ObjectchildMain {
 
 	public static void main(String[] args) {
 		ObjectChild oc = new ObjectChild();
-		int hashCode = oc.hashCode(); //이런 메소드가 있음...
+		int hashCode = oc.hashCode(); //이런 메소드가 있음... (객체 주소값...?)
 		System.out.println(hashCode);
 		System.out.println(Integer.toHexString(hashCode)); //얜 뭘까...
 		/*

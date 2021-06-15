@@ -19,7 +19,7 @@ public class MathMain {
 		 */
 		
 		
-		double r = Math.abs(-898975834.589);
+		double r = Math.abs(-898975834.589); //abs(): 절대값 구할 수 있는 메소드 
 		System.out.println(r);
 		System.out.println(Math.max(23, 45));
 		System.out.println(Math.min(23, 45));
