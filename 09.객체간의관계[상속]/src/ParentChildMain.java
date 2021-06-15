@@ -42,7 +42,7 @@ class Child  extends Parent{
 public class ParentChildMain {
 
 	public static void main(String[] args) {
-		System.out.println("-------------Child-------------");
+		System.out.println("-------------Child-----------");
 		Child c1=new Child();
 		c1.member1=1;
 		c1.member2=2;
