@@ -12,7 +12,6 @@
  *     상속  받아야한다. 
  * 
  */
-
 class Parent extends Object {
 	public int member1;
 	public int member2;
@@ -62,4 +61,9 @@ public class ParentChildMain {
 	}
 
 }
+
+
+
+
+
 
