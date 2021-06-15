@@ -7,8 +7,8 @@ public class AcademyMemberMain {
 		AcademyStudent st2 = new AcademyStudent(2, "HIM", "JAVA");
 		AcademyStudent st3 = new AcademyStudent(3, "JIM", "DESIGN");
 
-		AcademyGansa gs1 = new AcademyGangsa(4, "LEE", "ANDROID"); 
-		AcademyGansa gs2 = new AcademyGangsa(5, "SIM", "IOS"); 
+		AcademyGangsa gs1 = new AcademyGangsa(4, "LEE", "ANDROID"); 
+		AcademyGangsa gs2 = new AcademyGangsa(5, "SIM", "IOS"); 
 
 		AcademyStaff sf1 = new AcademyStaff(6, "WIM", "MARKETING"); 
 		AcademyStaff sf2 = new AcademyStaff(7, "WIM", "ACCOUNTING"); 
