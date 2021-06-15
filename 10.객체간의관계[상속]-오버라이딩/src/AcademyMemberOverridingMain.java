@@ -1,5 +1,5 @@
 
-public class AcademyMemberMain {
+public class AcademyMemberOverridingMain {
 
 	public static void main(String[] args) {
 		//AcademyMember m1 = new AcademyMember(0, "누구게");
@@ -22,20 +22,20 @@ public class AcademyMemberMain {
 		sf1.print();
 		*/
 		
-		//재정의 안함
+		
 		System.out.println("---------Student-----------");
-		st1.studentPrint();
-		st2.studentPrint();
-		st3.studentPrint();
+		st1.print();
+		st2.print();
+		st3.print();
 
 		System.out.println("-------Gangsa-------------");
-		gs1.gangsaPrint();
-		gs2.gangsaPrint();
+		gs1.print();
+		gs2.print();
 		
 		
 		System.out.println("----------Staff-----------");
-		sf1.staffPrint();
-		sf2.staffPrint();
+		sf1.print();
+		sf2.print();
 	}
 
 }
