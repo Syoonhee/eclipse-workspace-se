@@ -17,7 +17,9 @@ class Parent extends Object{
 		this.member2 = member2;
 		System.out.println("2.Parent(int member1, int member2) 생성자호출");
 	}
-
+	public void print() {
+		System.out.print(this.member1+"\t"+this.member2+"\t");
+	}
 	public void method1() {
 		System.out.println("Parent.method1()");
 	}
@@ -44,7 +46,7 @@ class Parent extends Object{
 	
 }
 class Child extends Parent{
-	public int member3;
+	private int member3;
 	
 	public Child() {
 		//System.out.println();
@@ -73,13 +75,34 @@ class Child extends Parent{
 		**********************/
 		/********case2********/
 		super(member1, member2);
-		
 		this.member3=member3;
 		System.out.println("3.Child(int member1,int member2,int member3) 생성자호출");
 	}
 	public void method3() {
+		
 		System.out.println("Child.method3()");
 	}
+	public void print() {
+		/*
+		<< The field Parent.member1 is not visible >>
+		System.out.println(this.member1+"\t"+this.member2+"\t"+this.member3);
+		*/
+		/**************case1***********
+		System.out.println(this.getMember1()+"\t"+this.getMember2()+"\t"+this.member3);
+		******************************/
+		super.print();
+		System.out.println(this.member3);
+		
+		
+	}
+	
+	public int getMember3() {
+		return member3;
+	}
+	public void setMember3(int member3) {
+		this.member3 = member3;
+	}
+	
 }
 
 
@@ -91,7 +114,7 @@ public class ParentChildMain {
 		Child c1=new Child();
 		System.out.println("----------Child(int member1,int member2,int member3)-----------");
 		Child c2=new Child(1, 2, 3);
-		
+		c2.print();
 		
 	}
 
