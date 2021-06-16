@@ -1,5 +1,5 @@
 public class AcademyGangsa extends AcademyMember {
-	public String subject;//과목 
+	public String subject; //과목 
 	public AcademyGangsa() {
 	}
 	public AcademyGangsa(int no,String name,String subject) {
@@ -9,7 +9,7 @@ public class AcademyGangsa extends AcademyMember {
 	}
 	public void print() {
 		super.print();
-		System.out.println(this.subject);
+		System.out.println(this.subject); 
 	}
 	public String getSubject() {
 		return subject;
