@@ -58,13 +58,13 @@ public class Account extends Object {
 		System.out.printf("%d %6s %8d %5.1f %n", this.no, this.owner, this.balance, this.iyul);
 	}
 	
-	
+	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
 		return this.no + "\t" + this.owner + "\t" + this.balance + "\t" + this.iyul;
 	}
 	
-	
+	//getter method
 	/**
 	 * 잔고를 반환하는 메소드
 	 * @return 계좌 잔고
