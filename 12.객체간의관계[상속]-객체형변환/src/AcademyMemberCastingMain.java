@@ -10,8 +10,16 @@ public class AcademyMemberCastingMain {
 		AcademyMember m4 = new AcademyGangsa(4, "SIM", "ARDUINO");
 		AcademyMember m5 = new AcademyGangsa(5, "HIM", "DESIGN");
 		
-		AcademyMember m6 = new AcademyStudent(6, "KUM", "영업부");
-		AcademyMember m7 = new AcademyStudent(7, "JUNG", "총무부");
+		AcademyMember m6 = new AcademyStaff(6, "KUM", "영업부");
+		AcademyMember m7 = new AcademyStaff(7, "JUNG", "총무부");
+		
+		
+		m1.print();
+		m2.print();
+		m3.print();
+		m4.print();
+		m5.print();
+		m6.print();
 	}
 
 }
