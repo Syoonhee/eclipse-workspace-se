@@ -44,6 +44,11 @@ public class Car {
 		return;
 	}
 	
+	@Override
+	public String toString() {
+		return "Car [no=" + no + ", inTime=" + inTime + ", outTime=" + outTime + ", fee=" + fee + "]";
+	}
+
 	/*
 	 * 입차데이타(번호,입차시간) 셋팅
 	 */
@@ -102,9 +107,6 @@ public class Car {
 	
 	
 }
-
-
-
 
 
 
