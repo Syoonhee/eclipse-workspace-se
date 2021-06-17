@@ -22,12 +22,14 @@ public class EmployeeAbstractMain {
 		
 		System.out.println();
 		for (int i = 0; i < emps.length; i++) {
+			if(emps[i] instanceof SalaryEmployee) {
 			emps[i].caculatePay();
 			System.out.println("--------"+emps[i].getName()+ " 님 급여명세표-------");
 			emps[i].print();
 			System.out.println("---------------------------------------------------");
 			System.out.println();   
 			System.out.println();   
+			}
 		}
 		
 		
