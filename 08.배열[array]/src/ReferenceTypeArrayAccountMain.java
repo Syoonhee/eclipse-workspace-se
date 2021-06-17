@@ -47,6 +47,15 @@ public class ReferenceTypeArrayAccountMain {
 			}
 		}
 		System.out.println("6.은행 계좌들중에서 계좌이율 2.0 이상인 계좌 여러개 찾아서 출력[Quiz]");
+		System.out.println("6.은행 계좌들중에서 이름이 KIM인 계좌 여러개 찾아서 출력");
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getOwner().equals("KIM")) {
+				accounts[i].print();
+			}
+		}
+		//String 문자열 비교할 때 --> equals로 비교
+		
+		
 		System.out.println("7.6666번계좌 3000원입금");
 		for (int i = 0; i < accounts.length; i++) {
 			if(accounts[i].getNo()==6666) {
