@@ -1,5 +1,7 @@
 package lang;
 
+import java.util.Iterator;
+
 public class StringUseMain {
 
 	public static void main(String[] args) {
@@ -44,6 +46,7 @@ public class StringUseMain {
 			if(tempChar>=48 && tempChar<=57) {
 				System.out.println(tempChar + " -> 숫자형문자");
 			}
+		}
 			
 			/*
 			 * Quiz: 아이디로 적합한지판단하시요
@@ -54,9 +57,85 @@ public class StringUseMain {
 			String[] idArray= {"guard","7up","test"," dfdj","my id","%super%","아이디","aaaaaaaaaa","c"};
 			
 			
+			System.out.println("----------String.split()-----------");
+			String cardNo = "2345-3434-234123";
+			String ssn = "201212-1282398";
+			String nameList = "김경호, 신명숙, 이은희, 정봉화, 정경호";
+			
+			String[] cardNoArray = cardNo.split("-");
+			String[] ssnArray = ssn.split("-");
+			String[] nameArray = nameList.split(",");
+			
+			for (int i = 0; i < cardNoArray.length; i++) {
+				System.out.println(i+"-->"+cardNoArray[i]);
+			}
+			for (int  i= 0; i < ssnArray.length; i++) {
+				System.out.println(i+"-->"+ssnArray[i]);
+			}
+			for (int i = 0; i < nameArray.length; i++) {
+				System.out.println(i+"-->"+nameArray[i]);
+			}
+			System.out.println("------------String.replace()------------------");
+			String str3 = "우리는 자바를 공부합니다. 자바는 객체지향언어입니다. 자바를 자바라!";
+			String result3 = str3.replace('자', '저');
+			System.out.println(result3);
+			System.out.println(str3.replace("자바", "파이썬"));
+			System.out.println(str3.replaceFirst("자바", "파이썬"));
+			System.out.println("-------------------String.toUpperCase,toLowerCase--------------------------");
+			System.out.println("jaVA".toUpperCase());
+			System.out.println("jaVA".toLowerCase());
+			System.out.println("----------------------------equals,equalsIgnoreCase---------------------------------");
+			System.out.println("yes".equals("Yes"));
+			System.out.println("yes".equalsIgnoreCase("Yes"));
+			System.out.println("---------------String.indexOf()--------------");
+			String fileName = "xxx.gif";
+			int dotIndex = fileName.indexOf(".");
+			System.out.println("dotIndex:"+ dotIndex);
+			String fileNameNoExt = fileName.substring(0,dotIndex);
+			String fileExt = fileName.substring(dotIndex+1);
+			System.out.println(fileNameNoExt+ "  "+ fileExt);
+			String copyFileName = fileNameNoExt + "-복사본." + fileExt;
+			System.out.println(copyFileName);
+			System.out.println("------------------String.starWith,endWith--------------");
+			String fileName2 = "yyy.jpg";
+			if(fileName2.endsWith("gif") || fileName2.endsWith(".jpeg")){
+				System.out.println(fileName2+"는 이미지파일입니다.");
+			}
+			String[] names = {"김경호", "이경호","김미선","이미숙","홍수환", "김현미"} ;
+			int count = 0; //이걸 왜 한 걸까...?
+			for (int i = 0; i < names.length; i++) {
+				if(names[i].startsWith("김")) {
+					System.out.println(names[i]+" ");
+					count++; //얘는 또 왜..?
+				}
+			}
+			String[] kimArray = new String[count];
+			int index = 0;
+			for (int i = 0; i < names.length; i++) {
+				if(names[i].startsWith("김")) {
+					kimArray[index] =names[i];
+					index++;
+				}
+			}
+			for (int i = 0; i < kimArray.length; i++) {
+				System.out.println(kimArray[i]);
+			}
+			
+			System.out.println("---------------String.trim------------------"); //좌우측공백제거
+			String idStr = "    guard  ";
+			System.out.println(idStr.length());
+			System.out.println(idStr.trim().length());
+			String spaceStr = "            ";
+			if(spaceStr.trim().equals("")) {
+				System.out.println("아이디를 입력하세요!!![spaceStr.trim().equals(\"\")]");
+			}
+			if(spaceStr.trim().length()==0) {
+				System.out.println("아이디를 입력하세요!!![spaceStr.trim().length()==0]");
+			}
 			
 			
+			
+			}
 		}
-		
-	}
-}
+
+
