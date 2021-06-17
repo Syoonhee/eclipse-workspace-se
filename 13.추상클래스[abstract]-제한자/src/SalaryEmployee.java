@@ -24,5 +24,5 @@ public class SalaryEmployee extends Employee {
 		this.annualSalary = annualSalary;
 	}
 
-	
+}
 	
