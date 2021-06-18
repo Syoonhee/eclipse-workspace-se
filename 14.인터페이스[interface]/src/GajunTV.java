@@ -1,17 +1,17 @@
 public class GajunTV implements GajunOnOff, GajunVolume {
-	public void tv1() {
-		System.out.println("tv1");
+	public void operation1() {
+		System.out.println("TV.operation1");
 	}
 
 	@Override
 	public void up() {
-		System.out.println("TV.up()");
+		System.out.println("TV.volumup()");
 		
 	}
 
 	@Override
 	public void down() {
-		System.out.println("TV.down()");
+		System.out.println("TV.volumedown()");
 		
 	}
 

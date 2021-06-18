@@ -1,6 +1,6 @@
 public class GajunAudio implements GajunVolume, GajunOnOff {
-	public void play() {
-		System.out.println("play");
+	public void operation1() {
+		System.out.println("Audio.operation1()");
 	}
 
 	@Override
