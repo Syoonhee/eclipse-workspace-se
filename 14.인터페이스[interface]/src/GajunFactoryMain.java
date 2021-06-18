@@ -13,10 +13,10 @@ public class GajunFactoryMain {
 		GajunOnOff gajun1 = tv1;
 		GajunOnOff[] gajunArray = new GajunOnOff[5]; //GajunOnOff타입의 5개의 멤버를 가지는 배열 객체의 생성
 		gajunArray[0] = tv1;
-		gajunArray[0] = tv2;
-		gajunArray[0] = tv3;
-		gajunArray[0] = audio1;
-		gajunArray[0] = audio2;
+		gajunArray[1] = tv2;
+		gajunArray[2] = tv3;
+		gajunArray[3] = audio1;
+		gajunArray[4] = audio2;
  		System.out.println("---------------가전제품 검사소(볼륨,OnOff)-----------------");
 		/*
 		 * 난 절대로 자식 클래스 타입을 사용 안 할래요
@@ -25,8 +25,14 @@ public class GajunFactoryMain {
 		 */
  		GajunOnOff[] recvGajunArray = gajunArray;
  		for (int i = 0; i < recvGajunArray.length; i++) {
-			recvGajunArray[i] 
-		}
+			recvGajunArray[i].on();
+			GajunVolume tempGajun = (GajunVolume)recvGajunArray[i];
+			tempGajun.up();
+			tempGajun.down();
+			recvGajunArray[i].off();
+			System.out.println("-------------검사 끝 출고-----------------");
+ 		
+ 		}
 		
 	}
 	
