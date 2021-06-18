@@ -46,6 +46,7 @@ public class InterfaceABImplMain {
 		InterfaceB ib2 = (InterfaceB)ia2;
 		ib2.method3();
 		ib2.method4();
+		
 	}
 
 }
