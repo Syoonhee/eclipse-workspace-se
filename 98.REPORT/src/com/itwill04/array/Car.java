@@ -3,7 +3,7 @@ package com.itwill04.array;
 public class Car {
 	
 	
-	//1.멤버필드(변수)(속성)
+	//1.멤버필드(변수)(속)
 	private String no;//차량번호
 	private int inTime;//입차시간
 	private int outTime;//출차시간
