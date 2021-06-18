@@ -5,5 +5,11 @@
 	*  유지보수시 많이 바꾸지 않아도 된다. 
 	*/
 public class GajunGumsa {
-
+	private GajunOnOff[] gajuns;
+	public void setGajuns(GajunOnOff[] gajuns) {
+		this.gajuns = gajuns;
+	}
+	public void gajunGumsa() {
+		
+	}
 }

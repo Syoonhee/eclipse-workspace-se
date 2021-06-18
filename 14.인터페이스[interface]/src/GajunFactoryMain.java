@@ -33,6 +33,7 @@ public class GajunFactoryMain {
 			recvGajunArray[i].off();
 			System.out.println("-------------검사 끝 출고-----------------");
  		
+		
  		}
 		
 	}
