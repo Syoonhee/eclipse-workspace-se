@@ -33,7 +33,13 @@ public class GajunFactoryMain {
 			recvGajunArray[i].off();
 			System.out.println("-------------검사 끝 출고-----------------");
  		
-		
+			/*
+			System.out.println("--------가전제품검사소 객체사용(GajunGumsa.java)-------------");
+			GajunGumsa gg=new GajunGumsa();
+			gg.setGajuns(gajunArray);
+			gg.gajunGumsa();
+			*/
+			
  		}
 		
 	}
