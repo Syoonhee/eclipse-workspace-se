@@ -12,6 +12,7 @@ public abstract class AcademyMember {
 	}
 	public void print() {
 		System.out.print(no+"\t"+name+"\t");
+	}
 	
 	public int getNo() {
 		return no;
