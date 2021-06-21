@@ -40,5 +40,9 @@ public class FinalField {
 		FinalField.NOTRH = 1;
 		FinalField.SOUTH = 1;
 		*/
+		System.out.println(FinalField.EAST);
+		System.out.println(FinalField.WEST);
+		System.out.println(FinalField.SOUTH);
+		System.out.println(FinalField.NOTRH);
 	}
 }
