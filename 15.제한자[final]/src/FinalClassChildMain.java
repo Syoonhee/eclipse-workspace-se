@@ -2,8 +2,9 @@
 public class FinalClassChildMain {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		FinalClassChild fcc = new FinalClassChild();
+		fcc.method1();
+		fcc.method2();
 	}
 
 }
