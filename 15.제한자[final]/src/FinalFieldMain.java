@@ -9,6 +9,16 @@ public class FinalFieldMain {
 		 * ff1.PORT_NUMBER = 8000;
 		 */
 		
+		/* <<The final field FinalField.EAST cannot be assigned>>
+		FinalField.EAST = 90;
+		FinalField.WEST = 90;
+		*/
+		
+		ff1.move(FinalField.NOTRH);
+		ff1.move(FinalField.NOTRH);
+		ff1.move(FinalField.SOUTH);
+		ff1.move(FinalField.EAST);
+		ff1.move(FinalField.WEST);
 	}
 
 }

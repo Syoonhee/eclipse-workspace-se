@@ -4,7 +4,7 @@
 	   상속금지 
        ex> public final class Test{}
     2. 멤버메쏘드앞에 붙일경우 
-       오버라이딩 금지
+       오버라이딩 금지 (상속은 받되 재정의(변경) 금지)
        ex> public final void print(){}
     3. 멤버변수 앞에붙일경우--> 상수(변하지x,선언과 동시에 대입작업 이뤄져야 함,
      	생성자 끝날 때 까지 대입 허용)
@@ -45,4 +45,27 @@ public class FinalField {
 		System.out.println(FinalField.SOUTH);
 		System.out.println(FinalField.NOTRH);
 	}
+	
+	public void move(int direction) {
+		switch (direction) {
+		case FinalField.NOTRH:
+			System.out.println("move north");
+			break;
+
+		case FinalField.SOUTH:
+			System.out.println("move south");
+			break;
+			
+		case FinalField.WEST:
+			System.out.println("move west");
+			break;
+
+		case FinalField.EAST:
+			System.out.println("move east");
+			break;
+		}
+	}
+	
+	
+	
 }
