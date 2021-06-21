@@ -33,6 +33,7 @@ public class PackageMain {
 		System.out.println(os1);
 		
 		com.itwill.shop.ShopService ss1 = new com.itwill.shop.ShopService();
+		System.out.println(ss1);
 		
 		
 	}
