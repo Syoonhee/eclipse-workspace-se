@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.net.Socket;
 
 public class Second {
 	/*
@@ -36,11 +37,17 @@ public class Second {
 		*/
 		
 		/**********case3 (비RuntimeException)**************/
-		IOException ex = new IOException("비RuntimeException");
+		/*IOException ex = new IOException("비RuntimeException");
 		boolean b = true;
 		if(b) {
 			throw ex; 
 		}
+		*/
+		
+		
+		Socket socket = new Socket("www.naver.com",80);
+		socket.getInputStream();
+		
 		
 		
 		System.out.println("\t\t Second.method2() 반환");

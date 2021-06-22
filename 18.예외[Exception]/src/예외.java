@@ -12,7 +12,7 @@
 	  
 	  
 	  * Exception 종류
-	   		1. RuntimeException    :throw구문으로 로 자동처리 (컴파일러가 에러를 발생시키지 않는다)
+	   		1. RuntimeException    :throw구문으로 자동처리 (컴파일러가 에러를 발생시키지 않는다, 모든 메쏘드의 원형에는 throws RuntimeException 생략)
 	   		    ==>프로그래머의 실수로인한 Exception 
 	   		    ex> NullPointerException,ArrayIndexOutOfBoundsException
 	       
