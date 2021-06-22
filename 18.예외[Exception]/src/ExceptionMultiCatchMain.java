@@ -59,7 +59,7 @@ public static void main(String[] args)  {
 			System.out.println("catch Exception start");
 			System.out.println("catch msg:" + e.getMessage());
 			System.out.println("catch Exception end");
-			JOptionPane.showMessageDialog(null, "잘 모르는 애로사항 발생!!");
+			JOptionPane.showMessageDialog(null, "애로사항 발생!!");
 		}
 		
 	}
