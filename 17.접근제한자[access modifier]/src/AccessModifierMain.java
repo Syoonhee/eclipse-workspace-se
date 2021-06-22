@@ -21,8 +21,17 @@
 public class AccessModifierMain {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		/*
+		자바에서제공하는 패키지이름과동일한패키지는 생성할수없다.
+		<< Prohibited package name: java.lang >>
+		 */
+		/*<<Prohibited package name: java.lang>>
+	    MyString myString=new MyString();
+		System.out.println(myString);
+		*/
+		/*
+		 * protected로 선언된 멤버는 상속 받아 클래스를 생성한 후 사용 가능
+		 */
 	}
 
 }
