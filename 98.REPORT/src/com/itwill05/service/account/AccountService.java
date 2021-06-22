@@ -106,8 +106,12 @@ public class AccountService {
 	 4.계좌번호 인자로받아서 계좌한개출력
 	 */
 	public void findByNoPrint(int no) {
+		Account.headerPrint();
 		for (int i = 0; i < accounts.length; i++) {
-			if(accounts[i].getNo() == no)
+			if(accounts[i].getNo() == no) {
+				accounts[i].print();
+				break;
+			}
 		}
 		
 	}	
@@ -115,20 +119,37 @@ public class AccountService {
 	 *  5.계좌잔고 인자로 받아서 잔고이상인 계좌들출력
 	 */
 	public void findByBalancePrint(int balance) {
-		
+		Account.headerPrint();
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getBalance() >= balance) {
+				accounts[i].print();
+			}
+		}
 	}
 	/*
 	6.계좌이율 인자로 받아서 이율이상인 계좌들출력
 	*/ 
 	public void findByIyulPrint(double iyul) {
-		
+		Account.headerPrint();
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getIyul() >= iyul) {
+				accounts[i].print();
+			}
+		}
 	}
 	/*
 	7.계좌주이름 인자로 받아서 인자이름과동일한 계좌들출력
 	 */ 
 	public void findByNamePrint(String name) {
+		Account.headerPrint();
+		for (int i = 0; i < accounts.length; i++) {
+			if((accounts[i].getOwner()).equals(name)) {
+				accounts[i].print();
+			}	
+		}
 		
 	}
+	
 	/*
 	8.계좌번호,입금할돈 인자로 받아서 입금
 	 */ 
@@ -137,14 +158,29 @@ public class AccountService {
 		 * 1.계좌번호로 계좌찾기
 		 * 2.입금
 		 */
-		
+		Account.headerPrint();
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getNo() == no) {
+				accounts[i].deposit(m);
+				break;
+			}
+		}
+		System.out.println();
 	}
+	
+	
 	/*
 	9.계좌번호,출금할돈 인자로 받아서 출금
 	 */ 
 	public void chulGum(int no,int m) {
-		
-		
+		Account.headerPrint();
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getNo() == no) {
+				accounts[i].withDraw(m);
+				break;
+			}
+		}
+		System.out.println();
 	}
 	
 	/*
@@ -158,14 +194,37 @@ public class AccountService {
 	 10.계좌를 잔고순으로 오름차순정렬
 	 */
 	public void sortByBalanceAscending() {
+		Account.headerPrint();
+		for (int i = 0; i < accounts.length - 1; i++) {
+			for (int j = 0; j < accounts.length - 1 - i; j++) {
+				if(accounts[j].getBalance() > accounts[j + 1].getBalance()) {
+					Account tempAccount = accounts[j];
+					accounts[j] = accounts[j + 1];
+					accounts[j + 1] = tempAccount;
+				}
+			}
+		}
 		
+		System.out.println();
 	}
+
 	/*
 	 11.계좌를 잔고순으로 내림차순정렬
 	 */
 	public void sortByBalanceDescending() {
+		Account.headerPrint();
+		for (int i = 0; i < accounts.length - 1; i++) {
+			for (int j = 0; j < accounts.length - 1 - i; j++) {
+				if(accounts[j].getBalance() < accounts[j + 1].getBalance()) {
+					Account tempAccount = accounts[j];
+					accounts[j] = accounts[j + 1];
+					accounts[j + 1] = tempAccount;
+				}
+			}
+		}
 		
-	}	
+		System.out.println();
+	}
 	/*
 	12.계좌객체를 인자로 받아서 이름,잔고,이율 수정(update)[OPTION]
 	*/
