@@ -158,7 +158,7 @@ public class AccountService {
 		 * 1.계좌번호로 계좌찾기
 		 * 2.입금
 		 */
-		Account.headerPrint();
+		
 		for (int i = 0; i < accounts.length; i++) {
 			if(accounts[i].getNo() == no) {
 				accounts[i].deposit(m);
@@ -173,14 +173,14 @@ public class AccountService {
 	9.계좌번호,출금할돈 인자로 받아서 출금
 	 */ 
 	public void chulGum(int no,int m) {
-		Account.headerPrint();
+		
 		for (int i = 0; i < accounts.length; i++) {
 			if(accounts[i].getNo() == no) {
 				accounts[i].withDraw(m);
 				break;
 			}
 		}
-		System.out.println();
+	
 	}
 	
 	/*
@@ -194,7 +194,6 @@ public class AccountService {
 	 10.계좌를 잔고순으로 오름차순정렬
 	 */
 	public void sortByBalanceAscending() {
-		Account.headerPrint();
 		for (int i = 0; i < accounts.length - 1; i++) {
 			for (int j = 0; j < accounts.length - 1 - i; j++) {
 				if(accounts[j].getBalance() > accounts[j + 1].getBalance()) {
@@ -212,7 +211,6 @@ public class AccountService {
 	 11.계좌를 잔고순으로 내림차순정렬
 	 */
 	public void sortByBalanceDescending() {
-		Account.headerPrint();
 		for (int i = 0; i < accounts.length - 1; i++) {
 			for (int j = 0; j < accounts.length - 1 - i; j++) {
 				if(accounts[j].getBalance() < accounts[j + 1].getBalance()) {
@@ -223,7 +221,6 @@ public class AccountService {
 			}
 		}
 		
-		System.out.println();
 	}
 	/*
 	12.계좌객체를 인자로 받아서 이름,잔고,이율 수정(update)[OPTION]
