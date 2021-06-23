@@ -54,15 +54,22 @@ public class Account {
 		this.balance = this.balance - m;
 	}
 
-	public void headerPrint() {
+	public static void headerPrint() {
 		System.out.printf("%s%n", "---------------------------");
 		System.out.printf("%s %5s %4s %4s%n", "번호", "이름", "잔고", "이율");
 		System.out.printf("%s%n", "---------------------------");
 	}
-
+	
 	public void print() {
 		System.out.printf("%d %6s %8d %5.1f %n", this.no, this.owner, this.balance, this.iyul);
 	}
+
+	
+	@Override
+	public String toString() {
+		return no+ " "+owner+ " "+balance+" " + iyul + " ";
+	}
+
 
 	//getter method
 	public int getBalance() {
