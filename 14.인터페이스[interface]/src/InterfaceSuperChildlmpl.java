@@ -2,7 +2,7 @@
 public class InterfaceSuperChildlmpl implements InterfaceSuperChild{
 
 	@Override
-	public void method_ssuper1() {
+	public void method_super1() {
 		System.out.println("InterfaceSuper.method_super1()를 구현(implement)");
 	}
 
