@@ -68,16 +68,15 @@ public class AccountServiceReturn {
 		for (int i = 0; i < accounts.length; i++) {
 			accounts[i].print();
 		}
-		System.out.println();
 	}
 
 	/*
 	 * 3.은행계좌들 총잔고를 반환하는 메쏘드
 	 */
 	public int getAccountTotBalance() {
-		int totBalance = 0;
+		int totBalance=0;
 		for (int i = 0; i < accounts.length; i++) {
-			totBalance += accounts[i].getBalance();
+			totBalance+=accounts[i].getBalance();
 		}
 		return totBalance;
 	}
@@ -86,12 +85,14 @@ public class AccountServiceReturn {
 	 * 4.계좌번호를 인자로받아서 계좌객체주소 한개반환
 	 */
 	public Account findByNo(int no) {
+		Account findAccount=null;
 		for (int i = 0; i < accounts.length; i++) {
-			if(accounts[i].getNo() == no) {
-				return accounts[i];
+			if(accounts[i].getNo()==no) {
+				findAccount = accounts[i];
+				break;
 			}
 		}
-		return null;
+		return findAccount;
 	}
 
 	/*
@@ -102,34 +103,15 @@ public class AccountServiceReturn {
 		/*
 		 * A. 만족하는 객체의갯수구하기 - 예를들어 3개라면
 		 */
-		int count = 0;
-		for (int i = 0; i < accounts.length; i++) {
-			if(accounts[i].getBalance() >= balance) {
-				count ++;
-			}
-		}
-		
-		
-		
 		
 		/*
 		 * B. Account객체배열생성 
 		 * 	- findAccounts=new Account[3];
 		 */
 		
-		findAccounts = new Account[count];
-		
 		/*
 		 * C. 만족하는Account객체들 Account배열에담기
 		 */
-		
-		int temp = 0;
-		for (int i = 0; i < accounts.length; i++) {
-			if(accounts[i].getBalance() >= balance) {
-				findAccounts[temp] = accounts[i];
-				temp++;
- 			}
-		}
 		return findAccounts;
 	}
 	/*
@@ -137,26 +119,10 @@ public class AccountServiceReturn {
 	 */
 	public Account[] findByIyul(double iyul) {
 		Account[] findAccounts = null;
-		int count = 0;
-		for (int i = 0; i < accounts.length; i++) {
-			if(accounts[i].getIyul() >= iyul) {
-				count++;
-			}
-		}
+
 		
-		findAccounts = new Account[count];
-		int temp = 0;
-		for (int i = 0; i < accounts.length; i++) {
-			if (accounts[i].getIyul() >= iyul) {
-				findAccounts[temp] = accounts[i];
-				temp++;
-			}
-		}
 		
 		return findAccounts;
-		
-		
-		
 	}
 
 	/*
@@ -164,33 +130,43 @@ public class AccountServiceReturn {
 	 */
 	public Account[] findByName(String name) {
 		Account[] findAccounts = null;
-		int count = 0;
+		/*
+		 * A. 만족하는 객체의갯수구하기 - 예를들어 3개라면
+		 */
+		int count=0;
 		for (int i = 0; i < accounts.length; i++) {
-			count++;
-		}
-		
-		findAccounts = new Account[count];
-		
-		int temp = 0;
-		for (int i = 0; i < accounts.length; i++) {
-			if (accounts[i].getOwner().equals(name)) {
-				findAccounts[temp] = accounts[i];
-				temp++;
+			if(accounts[i].getOwner().equals(name)) {
+				count++;
 			}
 		}
-		
+		/*
+		 * B. Account객체배열생성 
+		 * 	- findAccounts=new Account[3];
+		 */
+		findAccounts=new Account[count];
+		/*
+		 * C. 만족하는Account객체들 Account배열에담기
+		 */
+		int index=0;
+		for (int i=0; i < accounts.length; i++) {
+			if(accounts[i].getOwner().equals(name)) {
+				findAccounts[index]=accounts[i];
+				index++;
+			}
+		}
 		return findAccounts;
 	}
 
 	/*
-	 * 8.계좌번호,입금할돈 인자로 받아서 입금
+	 * 8.계좌번호,입금할돈 인자로 받아서 입금한후 입금계
 	 */
 	public Account ipGum(int no, int m) {
 		/*
 		 * 1.계좌번호로 계좌찾기 
 		 * 2.입금
+		 * 3.입금계좌 참조변수반환
 		 */
-		Account findAccount = this.findByNo(no);
+		Account findAccount=this.findByNo(no);
 		findAccount.deposit(m);
 		return findAccount;
 
@@ -209,15 +185,10 @@ public class AccountServiceReturn {
 	 * 10,11 정렬  standard --> 1:번호,2:이름,3:잔고,4:이율 
 	 *             order    --> 1:오름차순,2:내림차순
 	 */
-
-	
 	public void sort(int standard, int order) {
 		
 	}
-	
-	
-	
-	
+
 	/*
 	 * 12.계좌객체를 인자로 받아서 이름,잔고,이율 수정(update)[OPTION]
 	 */
@@ -257,3 +228,7 @@ public class AccountServiceReturn {
 	}
 	
 }
+
+
+
+
