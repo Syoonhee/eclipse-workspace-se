@@ -20,8 +20,27 @@ public class HashSetMain {
 		accountSet.add(acc5);
 		System.out.println("# set size:" + accountSet.size());
 		System.out.println(accountSet);
-	
-	
+		System.out.println("---------add[같은 객체]----------------");
+		/*
+		 * equals 메소드를 사용해서 중복체크를 한다.
+		 */
+		boolean isAdd= accountSet.add(acc2);
+		System.out.println("isAdd:" + isAdd);
+		isAdd= accountSet.add(acc3);
+		System.out.println("isAdd:" + isAdd);
+		System.out.println(accountSet);
+		System.out.println("# set size:" + accountSet.size());
+		System.out.println("---------------2.remove-------------------");
+		//accountSet.remove(); 참조변수를 줘야 지워짐
+		boolean isRemove = accountSet.remove(acc1);
+		System.out.println("isRemove:"+isRemove);
+		isRemove = accountSet.remove(acc1);
+		System.out.println("isRemove:"+isRemove);
+		System.out.println("# set size:" + accountSet.size());
+		System.out.println(accountSet);
+		
+		
+		
 	}
 
 }
