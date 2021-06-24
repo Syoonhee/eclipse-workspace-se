@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Iterator;
 
 public class HashSetMain {
 
@@ -39,8 +40,19 @@ public class HashSetMain {
 		System.out.println("# set size:" + accountSet.size());
 		System.out.println(accountSet);
 		
+		System.out.println("---------------iteration[전체출력]-----------------");
+		Iterator accountIter =accountSet.iterator(); //Iterator 인터페이스 타입? ,Set은 꺼낼 수 없다?
+		System.out.println(accountIter);
 		
-		
+		while(accountIter.hasNext()/*element가 존재하지 않으면 false*/) {
+			Account tempAccount = (Account) accountIter.next(); 
+			tempAccount.print();
+		}
+		/*
+		 * <<java.util.NoSuchElementException>>
+		 * accountIter.next();
+		 */
+		System.out.println(accountIter.hasNext());
 	}
 
 }

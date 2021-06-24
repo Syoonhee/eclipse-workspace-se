@@ -1,5 +1,6 @@
 import java.util.HashMap;
-import java.util.Map;
+import java.util.Iterator;
+import java.util.Set;
 
 public class HashMapMain {
 
@@ -48,8 +49,17 @@ public class HashMapMain {
 		carMap.remove("3243");
 		System.out.println("map size:"+carMap.size());
 		System.out.println(carMap);
+		System.out.println("##############iteration[전체출력]################");
+		Set keySet = carMap.keySet();
+		System.out.println(keySet);
+		Iterator keyIterator = keySet.iterator();
 		
-		
+		while (keyIterator.hasNext()) {
+			String key = (String) keyIterator.next();
+			//System.out.println("key-->" + key);
+			Car tempCar = (Car) carMap.get(key);
+			tempCar.print();
+		}
 	}
 
 }

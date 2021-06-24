@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ArrayListMain {
 
@@ -102,6 +103,17 @@ public class ArrayListMain {
 			Account tempAccount=(Account)accountList.get(i);
 			tempAccount.print();
 		}
+		
+		
+		System.out.println("-----------------iteration[전체출력]----------------");
+		Iterator accountIterator = accountList.iterator(); //ctrl+shift+o키
+		while (accountIterator.hasNext()) {
+			Account tempAccount = (Account) accountIterator.next();
+			tempAccount.print();
+		}
+		
+		
+		
 	}
 
 }
