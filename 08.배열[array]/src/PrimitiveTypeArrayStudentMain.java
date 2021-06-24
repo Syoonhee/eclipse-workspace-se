@@ -40,6 +40,7 @@ public class PrimitiveTypeArrayStudentMain {
 		/*
 		 * 0번학생석차계산
 		 */
+		
 		for(int i=0;i<noArray.length;i++) {
 			for(int j=0;j<noArray.length;j++) {
 				if(totArray[i]<totArray[j]) {
@@ -47,6 +48,8 @@ public class PrimitiveTypeArrayStudentMain {
 				}
 			}
 		}
+		
+		
 		/*
 		 * 3번학생 찾아서 1명 정보출력(학생번호는 중복되지않는다.)
 		 */

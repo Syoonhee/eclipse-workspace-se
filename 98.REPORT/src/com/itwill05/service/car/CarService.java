@@ -11,11 +11,25 @@ public class CarService {
 	public CarService(int count) {
 		carArray=new Car[count];
 	}
+	
 	/*
 	0. 차객체인자로받아서 입차후 성공실패여부반환
 	     - 주차장이 만차이면 입차실패
 	     - 차량번호중복체크
 	*/
+	
+	public boolean ipCha(Car car) {
+		boolean isSuccess = false;
+		/*
+		 * 1.주차장만차인지체크 
+		 * 2.차량번호 중복체크
+		 */
+		return false;
+	}
+	
+	
+	
+	
 	
 	/*
 	1. 전체차량출력

@@ -3,6 +3,21 @@ public class CarServiceMain {
 	public static void main(String[] args) {
 		CarService carService=new CarService(65);
 		System.out.println("0.CarService객체야 차객체인자로줄께 입차시켜줘");
+		carService.ipCha(new Car("2344",3));
+		carService.ipCha(new Car("2300",4));
+		carService.ipCha(new Car("1679",5));
+		carService.ipCha(new Car("7867",6));
+		carService.ipCha(new Car("9089",7));
+		carService.ipCha(new Car("5469",8));
+		carService.ipCha(new Car("7647",9));
+		carService.ipCha(new Car("9687",10));
+		
+		boolean isSuccess = carService.ipCha(new Car("2344",10));
+		if(!isSuccess) {
+			System.out.println("만차이거나 번호가 중복되었습니다.");
+		}
+		
+		
 		System.out.println("1.CarService객체야 전체차량출력해줘");
 		System.out.println("2.CarService객체야 전체주차구획수반환해줘");
 		System.out.println("3.CarService객체야 주차가능주차구획수반환해줘");
