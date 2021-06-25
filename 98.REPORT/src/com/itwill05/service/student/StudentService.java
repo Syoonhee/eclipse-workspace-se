@@ -55,9 +55,10 @@ public class StudentService {
 	 */
 	
 	public void calculateRank() {
+		//students[i].setRank(1);
 	for (int i = 0; i < students.length; i++) {
 		for (int j = 0; j < students.length; j++) {
-			if (students[j].getTot() < students[j].getTot()) {
+			if (students[i].getTot() < students[j].getTot()) {
 				students[i].setRank(students[i].getRank()+1);
 				}
 			}
