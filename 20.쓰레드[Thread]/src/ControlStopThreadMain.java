@@ -6,7 +6,8 @@ public class ControlStopThreadMain  {
 		ControlStopThread1 cst1 = new ControlStopThread1();
 		cst1.start();
 		System.out.println("2.main");
-	
+		ControlStopThread2 cst2 = new ControlStopThread2();
+		cst2.start();
 	
 	}
 
