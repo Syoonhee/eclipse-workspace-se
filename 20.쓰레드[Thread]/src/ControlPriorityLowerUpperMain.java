@@ -15,6 +15,8 @@ public class ControlPriorityLowerUpperMain {
 		
 		ut.setPriority(10);
 		lt.setPriority(1);
+		ut.setDaemon(true);
+		lt.setDaemon(true);
 		
 		ut.start();
 		lt.start();

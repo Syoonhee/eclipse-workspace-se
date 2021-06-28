@@ -2,6 +2,15 @@ public class ControlStopThread2 extends Thread{
 
 	private boolean isPlay;
 	
+	
+	public boolean isPlay() {
+		return isPlay;
+	}
+
+	public void setPlay(boolean isPlay) {
+		this.isPlay = isPlay;
+	}
+
 	public  ControlStopThread2() {
 		isPlay = true;
 	}
@@ -11,7 +20,7 @@ public class ControlStopThread2 extends Thread{
 		while(isPlay) {
 			
 			try {
-				Thread.sleep(500);
+				//Thread.sleep(500);
 				System.out.println("game move");
 				System.out.println("game fight");
 				System.out.println("game get score");
