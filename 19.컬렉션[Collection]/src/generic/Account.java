@@ -1,6 +1,6 @@
 package generic;
 
-public class Account {
+public class Account implements Comparable<Account>{
 	/*
 	 * 멤버필드
 	 */
@@ -12,13 +12,13 @@ public class Account {
 	 * 생성자
 	 */
 	/**
-	 * 기본 값으로 초기화된 계좌 객체 생성
+	 * 기본값으로 초기화된계좌객체생성
 	 */
 	public Account() {
 		// TODO Auto-generated constructor stub
 	}
 	/**
-	 * 매개변수 값으로 초기화된 계좌 객체 생성 
+	 * 매개변수값으로 최기화된계좌객체생성
 	 * @param no 계좌번호
 	 * @param owner 계좌주
 	 * @param balance 잔고
@@ -60,18 +60,17 @@ public class Account {
 		System.out.printf("%s %5s %4s %4s%n", "번호", "이름", "잔고", "이율");
 		System.out.printf("%s%n", "---------------------------");
 	}
-	
+
 	public void print() {
 		System.out.printf("%d %6s %8d %5.1f %n", this.no, this.owner, this.balance, this.iyul);
 	}
-
+	
 	
 	@Override
 	public String toString() {
-		return no+ " "+owner+ " "+balance+" " + iyul + " ";
+		return "("+no+" "+owner+" "+balance+" "+iyul+")";
 	}
-
-
+	
 	//getter method
 	public int getBalance() {
 		return this.balance;
@@ -106,5 +105,28 @@ public class Account {
 	public void setBalance(int balance) {
 		this.balance = balance;
 	}
+	/*
+		Compares this object with the specified object for order.
+		Returns anegative integer, zero, or a positive integer 
+		as this object is lessthan, equal to, or greater than the specified object. 
+	 */
+	@Override
+	public int compareTo(Account nextAccount) {
+		
+		if(this.balance > nextAccount.getBalance()) {
+			return -1;
+		}else {
+			return 1;
+		}
+		
+		/*이름 오름차순
+		if( this.owner.compareTo(nextAccount.getOwner()) >0) {
+			return 1;
+		}else {
+			return -1;
+		}
+		*/
+	}
+	
 
 }
