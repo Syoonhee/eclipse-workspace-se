@@ -52,6 +52,8 @@ public class MainThreadMain {
 		int priority = mainThread.getPriority(); 
 		System.out.println("main thread name:" + currentThreadName);
 		System.out.println("main thread priority:" + priority);
+		MainThreadCalled mtc = new MainThreadCalled();
+		mtc.main_thread_called_method(); 
 		System.out.println("main thread return");
 		
 	}
