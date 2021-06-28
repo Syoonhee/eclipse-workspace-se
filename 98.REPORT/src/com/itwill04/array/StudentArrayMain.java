@@ -95,21 +95,14 @@ public class StudentArrayMain {
 		 */
 		System.out.println("6. 학생총점으로 내림(오름)차순정렬");
 		Student.headerPrint();
-		for (int i = 0; i < students.length-1; i++) { //자기빼고 비교하니까 -1
-			for (int j = 0; j < students.length-1; j++) { //자기빼고 비교하니까 -1
-				if(students[j].getTot() < students[j+1].getTot()) {
-					Student temp = students[j+1];
-					/*
-					 * /참조변수의 비교는 주소 값과의 비교, 바로 비교 못 하니까 temp변수 만들어서 student[j+1]의 주소(#28)를 잠깐 보관
-					 */
-					students[j+1] = students[j]; // 주소의 교환?이 일어난 거 같음...(students[j]의 주소(#27)가 students[j+1}에...)
-					students[j] = temp; 
-			/*
-			 * temp에는 students[j+1]의 주소 값(#28)이 있는데 그게 students[j]에.....
-			 *  그러면서 temp는 for(int j=0~~)문을 벗어나면 사라지고 students[j+1]와 students[j]의 주소 교환만 이루어짐...
-			 */
+		for (int i = 0; i < students.length-1; i++) { //몇 회전 해야하는 지 결정 (길이-1번 회전)
+			for (int j = 0; j < students.length-1; j++) {  //j는 값 비교+ 자리 바꿔주는 역할
+				if(students[j].getTot() < students[j+1].getTot()) { //조건: students[i]의 총점 < students[i]의 총점
+					Student temp = students[j+1]; //자리를 바꿔주기 위한 변수 temp,student[j+1]의 주소 보관
+					students[j+1] = students[j]; // students[j]의 주소가 students[j+1}에..
+					students[j] = temp; //자리를 바꿔줌
 
-				} //if문에 해당하지 않는다면.... 주소 그대로
+				}
 			} 
 			
 			}

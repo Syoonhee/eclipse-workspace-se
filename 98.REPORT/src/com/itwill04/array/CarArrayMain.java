@@ -29,32 +29,34 @@ public class CarArrayMain {
 		
 		System.out.println("2.전체주차구획수: " + carArray.length);
 
-		System.out.print("3.주차가능주차구획수");
-		int count = 0; //주차 
+		System.out.print("3.주차가능주차구획수"); //null이 아닌 것
+		int count = 0; //주차가능한 곳 새기위함
 		for (int i = 0; i < carArray.length; i++) {
 			if(carArray[i] == null) { 
 				count++; //비어 있는 곳을 count해서 출력
 			}
 		}
+		
 		System.out.println(": "+ count);
 		
 		System.out.println("4.입차");
+		
 		/*
 		 * 1.차량객체생성
 		 * 2.빈자리(null)찾아서대입
 		 */
-		Car.headerPrint();
+		
+		Car inCar = new Car("1234", 4); //새로운 차가 들어옴
 		for (int i = 0; i < carArray.length; i++) {
-			if(carArray[i]== null) {
-				carArray[i] = new Car("7777",15); //빈 공간에 차량번호, 입차시간 대입
-				carArray[i].print();
-				break;
+			if(carArray[i] == null) /*빈자리찾음*/{
+				carArray[i] = inCar;
+				break; //하나만 대입하는 것
 			}
-		} 
-	
+		}
+		
 		
 		System.out.println("5.차량번호 7789번  차 한 대 정보출력");
-		Car.headerPrint();
+
 		for (int i = 0; i < carArray.length; i++) {
 			if(carArray[i] != null && carArray[i].getNo().equals("7789")) { //조건: null값이 아니며 차량번호는 7789(equals를 사용해서 문자열 비교)
 				carArray[i].print();
@@ -80,7 +82,7 @@ public class CarArrayMain {
 		 * 3. 영수증출력
 		 * 4. 주차에서 차량삭제
 		 */
-		Car.headerPrint();
+
 		for (int i = 0; i < carArray.length; i++) {
 			if(carArray[i] != null && carArray[i].getNo().equals("2389")) { //조건: null값이 아니며 차량번호는 2389
 				carArray[i].setOutTime(12); //12시 출차 대입
@@ -93,5 +95,5 @@ public class CarArrayMain {
 		
 		
 	}
-
 }
+

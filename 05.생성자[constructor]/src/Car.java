@@ -1,5 +1,3 @@
-package generic;
-
 public class Car {
 	
 	
@@ -60,7 +58,7 @@ public class Car {
 	/*
 	 *  헤더출력
 	 */
-	public static void headerPrint() {
+	public void headerPrint() {
 		System.out.println("-----------------------------------");
 		System.out.printf("%s %s %s %s%n","차량번호", "입차시간","출차시간","주차요금");
 		System.out.println("-----------------------------------");
@@ -100,13 +98,6 @@ public class Car {
 
 	public int getFee() {
 		return fee;
-	}
-
-
-
-	@Override
-	public String toString() {
-		return "[" + no + "]" + inTime;
 	}
 
 	
