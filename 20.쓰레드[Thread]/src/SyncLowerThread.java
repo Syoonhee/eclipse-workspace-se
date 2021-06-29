@@ -1,10 +1,13 @@
 
 public class SyncLowerThread extends Thread {
 	private Object monitorObject;
+	public SyncLowerThread(Object monitorObject) {
+		this.monitorObject = monitorObject;
+	}
 	@Override
 	public void run() {
 		while(true) {
-			System.out.println("\n--> Lower Thread 동기화 블록 실행 전");
+			//System.out.println("\n--> Lower Thread 동기화 블록 실행 전");
 			
 			/******************************************/
 			synchronized(monitorObject) {
@@ -35,7 +38,7 @@ public class SyncLowerThread extends Thread {
 			System.out.print("y");
 			System.out.print("z");
 			/******************************************/
-			System.out.println("\n--> Lower Thread 동기화 블록 실행 후");
+			//System.out.println("\n--> Lower Thread 동기화 블록 실행 후");
 			}
 		} 
 	}

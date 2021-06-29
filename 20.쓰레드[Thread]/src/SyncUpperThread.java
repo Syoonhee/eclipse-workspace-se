@@ -1,10 +1,13 @@
 
 public class SyncUpperThread extends Thread {
 	private Object monitorObject;
+	 public SyncUpperThread(Object monitorObject) {
+		this.monitorObject = monitorObject;
+	}
 	@Override
 	public void run() {
 		while(true) {
-			System.out.println("\n--> Upper Thread 동기화 블록 실행 전");
+			//System.out.println("\n--> Upper Thread 동기화 블록 실행 전");
 			
 			/******************************************/
 			synchronized (monitorObject) {
@@ -35,7 +38,7 @@ public class SyncUpperThread extends Thread {
 			System.out.print("Y");
 			System.out.print("Z");
 			/*****************************************/
-			System.out.println("\n--> Upper Thread 동기화 블록 실행 후");
+			//System.out.println("\n--> Upper Thread 동기화 블록 실행 후");
 			}
 		}
 	}
