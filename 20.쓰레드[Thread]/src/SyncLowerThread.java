@@ -1,36 +1,42 @@
 
 public class SyncLowerThread extends Thread {
-	
+	private Object monitorObject;
 	@Override
 	public void run() {
 		while(true) {
+			System.out.println("\n--> Lower Thread 동기화 블록 실행 전");
 			
-			System.out.println("a");
-			System.out.println("b");
-			System.out.println("c");
-			System.out.println("d");
-			System.out.println("e");
-			System.out.println("f");
-			System.out.println("g");
-			System.out.println("h");
-			System.out.println("i");
-			System.out.println("j");
-			System.out.println("k");
-			System.out.println("l");
-			System.out.println("m");
-			System.out.println("n");
-			System.out.println("o");
-			System.out.println("p");
-			System.out.println("q");
-			System.out.println("r");
-			System.out.println("s");
-			System.out.println("t");
-			System.out.println("u");
-			System.out.println("v");
-			System.out.println("w");
-			System.out.println("x");
-			System.out.println("y");
-			System.out.println("z");
-		}
+			/******************************************/
+			synchronized(monitorObject) {
+			System.out.print("a");
+			System.out.print("b");
+			System.out.print("c");
+			System.out.print("d");
+			System.out.print("e");
+			System.out.print("f");
+			System.out.print("g");
+			System.out.print("h");
+			System.out.print("i");
+			System.out.print("j");
+			System.out.print("k");
+			System.out.print("l");
+			System.out.print("m");
+			System.out.print("n");
+			System.out.print("o");
+			System.out.print("p");
+			System.out.print("q");
+			System.out.print("r");
+			System.out.print("s");
+			System.out.print("t");
+			System.out.print("u");
+			System.out.print("v");
+			System.out.print("w");
+			System.out.print("x");
+			System.out.print("y");
+			System.out.print("z");
+			/******************************************/
+			System.out.println("\n--> Lower Thread 동기화 블록 실행 후");
+			}
+		} 
 	}
 }
