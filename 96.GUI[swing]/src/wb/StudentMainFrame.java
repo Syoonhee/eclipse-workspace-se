@@ -46,14 +46,24 @@ public class StudentMainFrame extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton studentListBtn = new JButton("학생리스트");
-		studentListBtn.setFont(new Font("굴림", Font.PLAIN, 10));
+		JButton studentListBtn = new JButton("1.학생리스트");
+		studentListBtn.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 		studentListBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("학생리스트버튼클릭시 실행되는 메쏘드");
+				System.out.println("1.학생리스트버튼클릭시 실행되는 메쏘드");
 			}
 		});
-		studentListBtn.setBounds(329, 377, 95, 23);
+		studentListBtn.setBounds(22, 10, 213, 23);
 		contentPane.add(studentListBtn);
+		
+		JButton studentCalculateBtn = new JButton("2.학생총점평균평점계산");
+		studentCalculateBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("2.학생총점평균평점계산");
+			}
+		});
+		studentCalculateBtn.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+		studentCalculateBtn.setBounds(22, 43, 213, 23);
+		contentPane.add(studentCalculateBtn);
 	}
 }
