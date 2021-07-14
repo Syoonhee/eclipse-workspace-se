@@ -1,4 +1,4 @@
-package basic;
+package basic.driver;
 
 public class StaticBlockClass {
 	/*<< 클래스의 구성요소 >>
