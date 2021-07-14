@@ -6,6 +6,22 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class AddressDao3 {
+	public void insert(Address address) throws Exception {
+		/*******************************DB접속정보********************************/
+		String driverClass = "oracle.jdbc.OracleDriver";
+		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe"; //클라이언트가 thin하다?
+		String user = "javadeveloper20";
+		String password = "javadeveloper20";
+		String insertSql = "insert into address values(address_no_seq.nextval,'" + address.getId() + "','"
+				+ address.getName() + "','" + address.getPhone() + "','" + address.getAddress() + "')";//semicolon있으면 애로사항발생~~~~
+		Class.forName(driverClass);
+		Connection con = DriverManager.getConnection(url, user, password);
+		Statement stmt = con.createStatement();
+		int insertRowCount = stmt.executeUpdate(insertSql);
+		System.out.println(">> " + insertRowCount + " 행 insert");
+		stmt.close();
+		con.close();
+	}
 	public void insert(String id, String name, String phone, String address) throws Exception{
 		/*******************************DB접속정보********************************/
 		String driverClass = "oracle.jdbc.OracleDriver";
@@ -68,6 +84,29 @@ public class AddressDao3 {
 		stmt.close();
 		con.close();
 	}
+	
+	public void updateByNo(Address updateAddress) throws Exception {
+		/***************************************************************/
+		String driverClass = "oracle.jdbc.OracleDriver";
+		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe"; 
+		String user = "javadeveloper20";
+		String password = "javadeveloper20";
+		/***************************************************************/
+		
+		String updateSql = "update address set id='" + updateAddress.getId() + "',name='" + updateAddress.getName() + "',phone='" + updateAddress.getPhone() + "',address='"
+				+ updateAddress.getAddress() + "' where no = " + updateAddress.getNo();//semicolon있으면 애로사항발생~~~~
+		
+		
+		Class.forName(driverClass);
+		Connection con = DriverManager.getConnection(url,user,password);
+		Statement stmt = con.createStatement();
+		
+		int updateRowCount = stmt.executeUpdate(updateSql);
+		System.out.println(">>" + updateRowCount + " 행 update"); //자바에선 자동 커밋, sql은 커밋 명시
+		stmt.close();
+		con.close();
+	}
+	
 	
 	public void selectByNo(int no) throws Exception{
 		/***************************************************************/
