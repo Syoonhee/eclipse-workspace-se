@@ -10,16 +10,18 @@ public class JDBCFlowMain {
 
 	public static void main(String[] args) throws Exception {
 		String driverClass = "oracle.jdbc.OracleDriver";
-		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe";
+		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe"; //클라이언트가 thin하다?
 		String user = "javadeveloper20";
 		String password = "javadeveloper20";
 		String selectSql = "select * from dept"; //semicolon 있으면 에러 발생 
 		
 		/*
 		 1.Driver Class loading
+		 -Driver클래스 객체 생성
+		 -DriverManager 객체 등록
 		 */
 
-		Class.forName(driverClass);
+		Class.forName(driverClass); //클래스 로딩 
 		System.out.println("1.Driver Class loading");
 		
 		/*
@@ -51,6 +53,17 @@ public class JDBCFlowMain {
 			String loc = rs.getString("loc");
 			System.out.println(deptno+"\t" + dname + "\t" + loc);
 		}
+		/*
+		 * 6. resource 해지
+		 */
+		rs.close();
+		stmt.close();
+		con.close();
+		System.out.println("6.resource 해지 close()");
+		
+		
+		
+		
 	}
 
 }
