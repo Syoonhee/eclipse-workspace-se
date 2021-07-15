@@ -1,11 +1,11 @@
 package dao.address.third;
+
 /*
 VO(Value Object),DTO(Data Transfer Object)
   	- 한개의 주소객체  데이타를 가지고있다.(VO)
   	- 한개의 주소객체  데이타이동(파라메타,리턴데이타)시키기위한객체(DTO)
   	- 특정 테이블과 동일한 속성을 멤버변수로가지는 객체
  */
-
 
 /*
 이름      널?       유형           
