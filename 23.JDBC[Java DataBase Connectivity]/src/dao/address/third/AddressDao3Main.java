@@ -22,6 +22,7 @@ public class AddressDao3Main {
 		System.out.println(">> update");
 		Address updateAddress = new Address(22, "twotwo", "투투투", "222-2222", "광주시민");
 		addressDao3.updateByNo(updateAddress);
+		addressDao3.selectByNo(15);
 	}
 
 }
