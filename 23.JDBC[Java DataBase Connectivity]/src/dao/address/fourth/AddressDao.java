@@ -1,4 +1,4 @@
-package dao.address.third;
+package dao.address.fourth;
 /*
 Dao(Data Access Object)
  - Address들의 데이터를 저장하고있는 Address 테이블에
@@ -15,18 +15,17 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class AddressDao3 {
+public class AddressDao {
+	private DataSource dataSource; //멤버변수
+	public AddressDao(){//DAO객체 만듦
+		this.dataSource = new DataSource(); 
+	}
 	public Address selectByNo(int no) throws Exception {
-		/*********************DB접속정보*********************/
-		String driverClass = "oracle.jdbc.OracleDriver";
-		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe";
-		String user = "javadeveloper20";
-		String password = "javadeveloper20";
-		/*******************************************/
+
 		Address findAddres = null;
 		String selectSql = "select no,id,name,phone,address from address where no=" + no;//semicolon있으면 애로사항발생~~~~
-		Class.forName(driverClass);
-		Connection con = DriverManager.getConnection(url, user, password);
+
+		Connection con = dataSource.getConnection();
 		Statement stmt = con.createStatement();
 		ResultSet rs = stmt.executeQuery(selectSql);
 
@@ -43,25 +42,18 @@ public class AddressDao3 {
 
 		rs.close();
 		stmt.close();
-		con.close();
+		
+		dataSource.releaseConnection(con); //커넥션 주면 release
 		return findAddres;
 	}
 
 	public ArrayList<Address> selectAll() throws Exception {
-		/*********************DB접속정보*********************/
-		String driverClass = "oracle.jdbc.OracleDriver";
-		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe";
-		String user = "javadeveloper20";
-		String password = "javadeveloper20";
-		/*******************************************/
 		ArrayList<Address> addressList = new ArrayList<Address>();
 		String selectSql = "select no,id,name,phone,address from address";//semicolon있으면 애로사항발생~~~~
-		Class.forName(driverClass);
-		Connection con = DriverManager.getConnection(url, user, password);
+
+		Connection con = dataSource.getConnection();
 		Statement stmt = con.createStatement();
-
 		ResultSet rs = stmt.executeQuery(selectSql);
-
 		while (rs.next()) {
 			int no = rs.getInt("no");
 			String id = rs.getString("id");
@@ -74,115 +66,82 @@ public class AddressDao3 {
 		}
 		rs.close();
 		stmt.close();
-		con.close();
+		dataSource.releaseConnection(con); //커넥션 주면 release
 		return addressList;
 	}
 
 	public int insert(Address address) throws Exception {
-		/*********************DB접속정보*********************/
-		String driverClass = "oracle.jdbc.OracleDriver";
-		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe";
-		String user = "javadeveloper20";
-		String password = "javadeveloper20";
-		/*******************************************/
+
 		String insertSql = "insert into address values(address_no_seq.nextval,'" + address.getId() + "','"
 				+ address.getName() + "','" + address.getPhone() + "','" + address.getAddress() + "')";//semicolon있으면 애로사항발생~~~~
-		Class.forName(driverClass);
-		Connection con = DriverManager.getConnection(url, user, password);
+
+		Connection con = dataSource.getConnection();
 		Statement stmt = con.createStatement();
 		int insertRowCount = stmt.executeUpdate(insertSql);
 		System.out.println(">> " + insertRowCount + " 행 insert");
 		stmt.close();
-		con.close();
+		dataSource.releaseConnection(con); //커넥션 주면 release
 		return insertRowCount;
 	}
 
 	public int insert(String id, String name, String phone, String address) throws Exception {
-		/*********************DB접속정보*********************/
-		String driverClass = "oracle.jdbc.OracleDriver";
-		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe";
-		String user = "javadeveloper20";
-		String password = "javadeveloper20";
-		/*******************************************/
+
 		String insertSql = "insert into address values(address_no_seq.nextval,'" + id + "','" + name + "','" + phone
 				+ "','" + address + "')";//semicolon있으면 애로사항발생~~~~
-		Class.forName(driverClass);
-		Connection con = DriverManager.getConnection(url, user, password);
+
+		Connection con = dataSource.getConnection();
 		Statement stmt = con.createStatement();
 		int insertRowCount = stmt.executeUpdate(insertSql);
 		System.out.println(">> " + insertRowCount + " 행 insert");
 		stmt.close();
-		con.close();
+		dataSource.releaseConnection(con); //커넥션 주면 release
 		return insertRowCount;
 	}
 
 	public int deleteByNo(int no) throws Exception {
-		/*********************DB접속정보*********************/
-		String driverClass = "oracle.jdbc.OracleDriver";
-		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe";
-		String user = "javadeveloper20";
-		String password = "javadeveloper20";
-		/*******************************************/
+
 		String deleteSql = "delete from address where no=" + no;//semicolon있으면 애로사항발생~~~~
-		Class.forName(driverClass);
-		Connection con = DriverManager.getConnection(url, user, password);
+
+		Connection con = dataSource.getConnection();
 		Statement stmt = con.createStatement();
 
 		int deleteRowCount = stmt.executeUpdate(deleteSql);
 		System.out.println(">> " + deleteRowCount + " 행 delete");
 		stmt.close();
-		con.close();
+		dataSource.releaseConnection(con); //커넥션 주면 release
 		return deleteRowCount;
 	}
 
 	public int updateByNo(Address updateAdress) throws Exception {
-		/*********************DB접속정보*********************/
-		String driverClass = "oracle.jdbc.OracleDriver";
-		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe";
-		String user = "javadeveloper20";
-		String password = "javadeveloper20";
-		/*******************************************/
+
 		String updateSql = "update address set id='" + updateAdress.getId() + "',name='" + updateAdress.getName()
 				+ "',phone='" + updateAdress.getPhone() + "',address='" + updateAdress.getAddress() + "' where no = "
 				+ updateAdress.getNo();//semicolon있으면 애로사항발생~~~~
 
-		Class.forName(driverClass);
-		Connection con = DriverManager.getConnection(url, user, password);
+		Connection con = dataSource.getConnection();
 		Statement stmt = con.createStatement();
 
 		int updateRowCount = stmt.executeUpdate(updateSql);
 		System.out.println(">> " + updateRowCount + " 행 update");
 		System.out.println("update sql:" + updateSql);
 		stmt.close();
-		con.close();
+		dataSource.releaseConnection(con); //커넥션 주면 release
 		return updateRowCount;
 	}
 
-	/*
-	public void updateByNoId(int no, String id) {}
-	public void updateByNoName(int no, String name) {}
-	public void updateByNoAddress(int no, String address) {}
-	public void updateByNoPhone(int no, String phone) {}
-	*/
 	public int updateByNo(int no, String id, String name, String phone, String address) throws Exception {
-		/*********************DB접속정보*********************/
-		String driverClass = "oracle.jdbc.OracleDriver";
-		String url = "jdbc:oracle:thin:@182.237.126.19:1521:xe";
-		String user = "javadeveloper20";
-		String password = "javadeveloper20";
-		/*******************************************/
+
 		String updateSql = "update address set id='" + id + "',name='" + name + "',phone='" + phone + "',address='"
 				+ address + "' where no = " + no;//semicolon있으면 애로사항발생~~~~
 
-		Class.forName(driverClass);
-		Connection con = DriverManager.getConnection(url, user, password);
+		Connection con = dataSource.getConnection();
 		Statement stmt = con.createStatement();
 
 		int updateRowCount = stmt.executeUpdate(updateSql);
 		System.out.println(">> " + updateRowCount + " 행 update");
 		System.out.println("update sql:" + updateSql);
 		stmt.close();
-		con.close();
+		dataSource.releaseConnection(con); //커넥션 주면 release
 		return updateRowCount;
 	}
 
