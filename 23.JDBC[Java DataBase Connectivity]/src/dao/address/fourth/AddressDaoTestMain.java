@@ -1,36 +1,13 @@
 package dao.address.fourth;
 
-import java.util.ArrayList;
-
 public class AddressDaoTestMain {
 
 	public static void main(String[] args) throws Exception {
-		AddressDao addressDao3 = new AddressDao();
-		System.out.println(">> delete");
-		addressDao3.deleteByNo(11);
-		/**************************select***************************/
-		System.out.println(">> selectByNo");
-		Address findAddress = addressDao3.selectByNo(20);
-		System.out.println(findAddress);
-		System.out.println(">> selectAll");
-		ArrayList<Address> addressList = addressDao3.selectAll();
-		for (Address address : addressList) {
-			System.out.println(address);
-		}
-		/***************************case 1*********************************
-		System.out.println(">> insert");
-		int rowCount = addressDao3.insert("zzz", "김수로", "888-9090", "서울시민");
-		System.out.println(">> update");
-		rowCount = addressDao3.updateByNo(12, "eight", "팔팔팔", "888-8888", "팔도시");
-		***************************case 2(DTO Address)*********************/
-		System.out.println(">> insert");
-		Address insertAddress = new Address(0, "vvv", "김부이", "111-9090", "제주시민");
-		int rowCount = addressDao3.insert(insertAddress);
-		System.out.println(">> update");
-		Address updateAddress = new Address(15, "twotwo", "투투투", "222-2222", "광주시민");
-		rowCount = addressDao3.updateByNo(updateAddress);
-		findAddress = addressDao3.selectByNo(15);
-		System.out.println(findAddress);
+		AddressDao addressDao = new AddressDao();
+		System.out.println("1.insert    -->" + addressDao.insert(new Address(13, "ooo", "오오오", "555-5555", "오정리")));
+		System.out.println("2.update    -->" + addressDao.updateByNo(new Address(1, "first", "일일일", "111-1111", "일산")));
+		System.out.println("3.selectByNo-->" + addressDao.selectByNo(6));
+		System.out.println("4.deleteByNo-->" + addressDao.deleteByNo(10));
+		System.out.println("5.selectAll-->" + addressDao.selectAll());
 	}
-
 }
